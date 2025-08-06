@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Moderne Website für einen Bauzeichner – barrierefrei, responsiv und DSGVO-konform"
+    />
+    <title>Bauzeichner Max Muster</title>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/script.js" defer></script>
+  </head>
+  <body>
+    <!-- DSGVO Cookie Hinweis -->
+    <div class="cookie-banner" role="region" aria-label="Cookie Hinweis">
+      <span
+        >Diese Website verwendet Cookies. Mit der Nutzung stimmen Sie dem
+        zu.</span
+      >
+      <button aria-label="Einverstanden">OK</button>
+    </div>
+
+    <nav class="navbar">
+      <div class="nav-inner">
+        <div class="logo">
+          <img src="assets/img/logo01_gross.png" alt="Logo" />
+        </div>
+
+        <button
+          class="menu-toggle"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          aria-controls="main-menu"
+        >
+          ☰
+        </button>
+
+        <div id="main-menu" hidden>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#ueberuns">Über mich</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero" role="banner" id="hero">
+      <h1>Bauzeichner Peter Kopf</h1>
+      <p>
+        Präzision in Planung & CAD – Ihr Partner für professionelle
+        Bauzeichnungen
+      </p>
+    </header>
+
+    <!-- LEISTUNGEN -->
+    <section
+      class="leistungen"
+      id="leistungen"
+      aria-labelledby="leistungen-heading"
+    >
+      <h2 class="handwritten leistungen-heading">Leistungen</h2>
+      <div class="leistungen-grid">
+        <div class="leistung">
+          <div class="icon">📐</div>
+          <h3>CAD-Zeichnungen</h3>
+          <p>Präzise technische Zeichnungen nach DIN.</p>
+        </div>
+        <div class="leistung">
+          <div class="icon">🏗️</div>
+          <h3>Planung & Konstruktion</h3>
+          <p>Ausführungs- und Konstruktionspläne.</p>
+        </div>
+        <div class="leistung">
+          <div class="icon">✏️</div>
+          <h3>Revisionspläne</h3>
+          <p>Bestehende Pläne überarbeiten & anpassen.</p>
+        </div>
+        <div class="leistung">
+          <div class="icon">🖨️</div>
+          <h3>Druck & Plot-Service</h3>
+          <p>Großformatdruck in professioneller Qualität.</p>
+        </div>
+        <div class="leistung">
+          <div class="icon">🧱</div>
+          <h3>3D-Visualisierung</h3>
+          <p>Darstellung komplexer Objekte & Modelle.</p>
+        </div>
+        <div class="leistung">
+          <div class="icon">🧾</div>
+          <h3>Bestandsaufnahmen</h3>
+          <p>Vor-Ort-Messungen und präzise Dokumentation.</p>
+        </div>
+      </div>
+      <div class="leistung-cta">
+        <p>
+          <strong>Ihr Projekt erfordert mehr als das?</strong><br />
+          Lassen Sie uns Ihre Anforderungen persönlich besprechen – praxisnah
+          und lösungsorientiert.
+        </p>
+        <a
+          href="#kontakt"
+          class="skizzen-button"
+          aria-label="Unverbindlich anfragen"
+          >Unverbindlich anfragen</a
+        >
+      </div>
+    </section>
+
+    <!-- Skizzen-Wellenlinie -->
+    <div aria-hidden="true" style="margin: -2rem 0 -2rem">
+      <svg
+        viewBox="0 0 1200 100"
+        preserveAspectRatio="none"
+        style="display: block; width: 100%; height: 80px"
+      >
+        <path
+          d="M0,50 C300,0 900,100 1200,50"
+          fill="none"
+          stroke="#005bb5"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-dasharray="2000"
+          stroke-dashoffset="2000"
+        />
+      </svg>
+    </div>
+
+    <!-- ÜBER UNS -->
+    <section aria-labelledby="uebermich" class="ueber-mich wow" id="ueberuns">
+      <div class="ueber-mich-text">
+        <h2 id="uebermich" class="handwritten">Über mich</h2>
+        <p>
+          Mein Name ist <strong>Peter Kopf</strong>. Ich bin Technischer
+          Zeichner der Fachrichtung Maschinenbau und habe 1994 mein eigenes
+          Zeichenbüro gegründet.
+        </p>
+        <p>
+          Ich unterstütze Unternehmen mit präzisen Zeichnungen – von CAD-Planung
+          über Revisionspläne bis zur Druckausgabe. Dabei bringe ich meine
+          langjährige Erfahrung aus verschiedenen Branchen wie
+          <strong>Sondermaschinenbau</strong>, <strong>Stahlbau</strong> oder
+          <strong>Haustechnik</strong> ein.
+        </p>
+        <p>
+          Ich arbeite mit <strong>AutoCAD (inkl. MEP & Architectural)</strong>,
+          <strong>Brixcad</strong> und <strong>Nova Plancal</strong> –
+          zuverlässig, strukturiert und auf Wunsch auch direkt bei Ihnen vor
+          Ort.
+        </p>
+        <p>
+          <strong>Ich freue mich auf Ihre Anfrage!</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section
+      aria-labelledby="cta-demo"
+      style="text-align: center; padding: 4rem 1rem"
+    >
+      <h2 id="cta-demo" class="handwritten" style="text-align: center">
+        Bereit für Ihr nächstes Projekt?
+      </h2>
+      <p>
+        Ich freue mich auf Ihre Anfrage – lassen Sie uns gemeinsam loslegen!
+      </p>
+      <button
+        class="skizzen-button"
+        onclick="document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' })"
+        aria-label="Kontakt aufnehmen"
+      >
+        Kontakt aufnehmen
+      </button>
+    </section>
+
+    <!-- KONTAKT -->
+    <section aria-labelledby="kontakt" id="kontakt">
+      <h2 id="kontakt" class="handwritten">Kontakt</h2>
+      <p style="text-align: center">
+        Ich melde mich zeitnah zurück – versprochen!
+      </p>
+
+      <form class="kontaktformular wow" aria-label="Kontaktformular">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          placeholder="Ihr Name"
+          required
+          aria-required="true"
+        />
+
+        <label for="email">E-Mail</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="Ihre E-Mail"
+          required
+          aria-required="true"
+        />
+
+        <label for="nachricht">Nachricht</label>
+        <textarea
+          id="nachricht"
+          rows="5"
+          placeholder="Ihre Nachricht an mich ..."
+          required
+          aria-required="true"
+        ></textarea>
+
+        <button
+          type="submit"
+          class="skizzen-button"
+          aria-label="Nachricht senden"
+        >
+          Nachricht senden
+        </button>
+      </form>
+    </section>
+
+    <!-- Footer Start -->
+    <footer class="site-footer wow">
+      <div class="footer-content">
+        <div class="footer-left">
+          <strong>Peter Kopf – Bauzeichner</strong><br />
+          Oberdorfstraße 60<br />
+          76698 Ubstadt-Weiher<br />
+          <a href="mailto:zeichenbuero.kopf@gmx.de">zeichenbuero.kopf@gmx.de</a>
+          <br />
+          <a href="tel:+491726304124">+49 172 6304124</a>
+        </div>
+        <div class="footer-right">
+          <strong>Rechtliches</strong><br />
+          <br />
+          <a href="/impressum.html">Impressum</a><br />
+          <a href="/datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+      <div class="footer-credit">
+        Website erstellt von <strong>Steven Kirstein – Web Developer</strong>
+      </div>
+    </footer>
+    <!-- Footer End -->
+    <a href="#main" class="skip-link">Zum Inhalt springen</a>
+  </body>
+</html>
