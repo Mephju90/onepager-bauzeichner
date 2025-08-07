@@ -153,7 +153,7 @@
           Ort.
         </p>
         <p>
-          <strong>Ich freue mich auf Ihre Anfrage!</strong>
+          <strong>Ich freue mich auf Ihre Nachricht!</strong>
         </p>
       </div>
     </section>
@@ -179,49 +179,54 @@
     </section>
 
     <!-- KONTAKT -->
-    <section aria-labelledby="kontakt" id="kontakt">
-      <h2 id="kontakt" class="handwritten">Kontakt</h2>
-      <p style="text-align: center">
-        Ich melde mich zeitnah zurück – versprochen!
-      </p>
+    <section id="kontakt" class="kontaktformular wow" aria-labelledby="kontakt-heading">
+  <h2 id="kontakt-heading">Kontakt</h2>
 
-      <form class="kontaktformular wow" aria-label="Kontaktformular">
-        <label for="name">Name</label>
-        <input
-          id="name"
-          type="text"
-          placeholder="Ihr Name"
-          required
-          aria-required="true"
-        />
+  <form 
+    action="mailto:zeichenbuero.kopf@gmx.de" 
+    method="post" 
+    enctype="text/plain" 
+    aria-describedby="kontakt-beschreibung"
+  >
+    <p id="kontakt-beschreibung">Felder mit * sind erforderlich.</p>
 
-        <label for="email">E-Mail</label>
-        <input
-          id="email"
-          type="email"
-          placeholder="Ihre E-Mail"
-          required
-          aria-required="true"
-        />
+    <label for="name">Ihr Name *</label>
+    <input 
+      type="text" 
+      id="name" 
+      name="name" 
+      required 
+      aria-required="true"
+    >
 
-        <label for="nachricht">Nachricht</label>
-        <textarea
-          id="nachricht"
-          rows="5"
-          placeholder="Ihre Nachricht an mich ..."
-          required
-          aria-required="true"
-        ></textarea>
+    <label for="email">Ihre E-Mail *</label>
+    <input 
+      type="email" 
+      id="email" 
+      name="email" 
+      required 
+      aria-required="true"
+    >
 
-        <button
-          type="submit"
-          class="skizzen-button"
-          aria-label="Nachricht senden"
-        >
-          Nachricht senden
-        </button>
-      </form>
-    </section>
+    <label for="nachricht">Ihre Nachricht *</label>
+    <textarea 
+      id="nachricht" 
+      name="nachricht" 
+      rows="5" 
+      required 
+      aria-required="true"
+    ></textarea>
+
+    <button 
+      type="submit" 
+      class="skizzen-button" 
+      aria-label="Nachricht an Peter Kopf senden"
+    >
+      Nachricht senden
+    </button>
+  </form>
+</section>
+
 
     <!-- Footer Start -->
     <footer class="site-footer wow">

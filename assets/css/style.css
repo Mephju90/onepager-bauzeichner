@@ -103,6 +103,7 @@ a {
   font-size: 1rem;
 }
 
+
 @media (max-width: 768px) {
   #main-menu {
     position: absolute;
@@ -141,6 +142,12 @@ a {
   nav[hidden] {
     display: none;
   }
+ 
+  .ueber-mich-text {
+    padding: 1rem 1.5rem;
+  }
+
+
 }
 
 /* ---------- SEKTIONSLAYOUT ---------- */
@@ -233,10 +240,11 @@ header, section {
 }
 
 @media (max-width: 600px) {
-  .leistungen-cta {
+    .leistungen-cta {
     padding: 1.5rem 1rem;
   }
 }
+
 
 
 
@@ -274,11 +282,16 @@ header, section {
   margin-bottom: 2rem;
   margin-top: 0;
 }
-.ueber-mich-text p {
-  font-size: 1.1rem;
-  max-width: 60ch;
-  line-height: 1.7;
+.ueber-mich-text {
+  max-width: 720px;
+  /* margin: 0 auto; */
+  text-align: left;
+  padding: 1rem;
 }
+
+
+
+
 .ueber-grid {
   display: grid;
   gap: 1.5rem;
@@ -287,6 +300,18 @@ header, section {
 @media (min-width: 700px) {
   .ueber-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .ueber-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+
+  .ueber-grid {
+    grid-template-columns: 1fr;
   }
 }
 .info-box {
