@@ -25,7 +25,7 @@
     <nav class="navbar">
       <div class="nav-inner">
         <div class="logo">
-          <img src="assets/img/logo01_gross.png" alt="Logo" />
+          <img src="assets/img/logo03.png" alt="Logo" />
         </div>
 
         <button
@@ -40,6 +40,7 @@
         <div id="main-menu" hidden>
           <ul>
             <li><a href="#hero">Home</a></li>
+            <li><a href="#leistungen">Leistungen</a></li>
             <li><a href="#ueberuns">Über mich</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>
@@ -65,32 +66,32 @@
       <h2 class="handwritten leistungen-heading">Leistungen</h2>
       <div class="leistungen-grid">
         <div class="leistung">
-          <div class="icon">📐</div>
+          <div class="icon"><img src="assets/img/icons/cad.png" alt=""></div>
           <h3>CAD-Zeichnungen</h3>
           <p>Präzise technische Zeichnungen nach DIN.</p>
         </div>
         <div class="leistung">
-          <div class="icon">🏗️</div>
+          <div class="icon"><img src="assets/img/icons/planung.png" alt=""></div>
           <h3>Planung & Konstruktion</h3>
           <p>Ausführungs- und Konstruktionspläne.</p>
         </div>
         <div class="leistung">
-          <div class="icon">✏️</div>
+          <div class="icon"><img src="assets/img/icons/pläne.png" alt=""></div>
           <h3>Revisionspläne</h3>
           <p>Bestehende Pläne überarbeiten & anpassen.</p>
         </div>
         <div class="leistung">
-          <div class="icon">🖨️</div>
+          <div class="icon"><img src="assets/img/icons/plot.png" alt=""></div>
           <h3>Druck & Plot-Service</h3>
           <p>Großformatdruck in professioneller Qualität.</p>
         </div>
         <div class="leistung">
-          <div class="icon">🧱</div>
+          <div class="icon d3"><img src="assets/img/icons/3d.png" alt=""></div>
           <h3>3D-Visualisierung</h3>
           <p>Darstellung komplexer Objekte & Modelle.</p>
         </div>
         <div class="leistung">
-          <div class="icon">🧾</div>
+          <div class="icon"><img src="assets/img/icons/bestand.png " alt=""></div>
           <h3>Bestandsaufnahmen</h3>
           <p>Vor-Ort-Messungen und präzise Dokumentation.</p>
         </div>
@@ -179,54 +180,82 @@
     </section>
 
     <!-- KONTAKT -->
-    <section id="kontakt" class="kontaktformular wow" aria-labelledby="kontakt-heading">
-  <h2 id="kontakt-heading">Kontakt</h2>
 
-  <form 
-    action="mailto:zeichenbuero.kopf@gmx.de" 
-    method="post" 
-    enctype="text/plain" 
-    aria-describedby="kontakt-beschreibung"
-  >
-    <p id="kontakt-beschreibung">Felder mit * sind erforderlich.</p>
-
-    <label for="name">Ihr Name *</label>
-    <input 
-      type="text" 
-      id="name" 
-      name="name" 
-      required 
-      aria-required="true"
+    <section
+      id="kontakt"
+      class="kontaktformular wow"
+      aria-labelledby="kontakt-heading"
     >
+      <h2 id="kontakt-heading">Kontakt</h2>
 
-    <label for="email">Ihre E-Mail *</label>
-    <input 
-      type="email" 
-      id="email" 
-      name="email" 
-      required 
-      aria-required="true"
-    >
+      <form
+        action="mailto:zeichenbuero.kopf@gmx.de"
+        method="post"
+        enctype="text/plain"
+        aria-describedby="kontakt-beschreibung"
+      >
+        <p id="kontakt-beschreibung">Felder mit * sind erforderlich.</p>
 
-    <label for="nachricht">Ihre Nachricht *</label>
-    <textarea 
-      id="nachricht" 
-      name="nachricht" 
-      rows="5" 
-      required 
-      aria-required="true"
-    ></textarea>
+        <label for="name">Ihr Name *</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          aria-required="true"
+        />
 
-    <button 
-      type="submit" 
-      class="skizzen-button" 
-      aria-label="Nachricht an Peter Kopf senden"
-    >
-      Nachricht senden
-    </button>
-  </form>
-</section>
+        <label for="email">Ihre E-Mail *</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          aria-required="true"
+        />
 
+        <label for="nachricht">Ihre Nachricht *</label>
+        <textarea
+          id="nachricht"
+          name="nachricht"
+          rows="5"
+          required
+          aria-required="true"
+        ></textarea>
+
+        <fieldset class="ds-check">
+          <legend class="visually-hidden">Datenschutz</legend>
+          <label for="datenschutz">
+            <input
+              type="checkbox"
+              id="datenschutz"
+              name="datenschutz"
+              required
+              aria-required="true"
+            />
+            <span>
+              Ich habe die
+              <a
+                href="/datenschutz.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Datenschutzerklärung
+              </a>
+              gelesen und stimme der Verarbeitung meiner Daten zu.
+            </span>
+          </label>
+        </fieldset>
+
+        <button
+          type="submit"
+          class="skizzen-button"
+          aria-label="Nachricht an Peter Kopf senden"
+        >
+          Nachricht senden
+        </button>
+      </form>
+    </section>
 
     <!-- Footer Start -->
     <footer class="site-footer wow">
