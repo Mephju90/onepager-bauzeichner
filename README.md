@@ -1,4 +1,4 @@
-# 🏗️ Onepager Website – Bauzeichner Max Muster (Portfolio-Version)
+# 🏗️ Onepager Website – Bauzeichner (Portfolio-Version)
 
 Diese Website ist ein modernes, responsives Onepager-Design für das Zeichenbüro von Max Muster.  
 Sie dient ausschließlich als öffentlich zugängliches **Portfolio-Projekt** und ist **nicht die finale Website** des Bauzeichners.
@@ -11,7 +11,7 @@ Sie dient ausschließlich als öffentlich zugängliches **Portfolio-Projekt** un
 
 Diese Version dient ausschließlich der Präsentation meiner Fähigkeiten als Webentwickler.  
 Funktionen wie das Kontaktformular sind **deaktiviert** und nicht produktiv nutzbar.  
-Die **echte Website** wird demnächst über den Hosting-Anbieter **IONOS** veröffentlicht.
+Die **echte Website** wird demnächst veröffentlicht.
 
 ---
 
@@ -75,9 +75,9 @@ Erstellt von **Steven** – [Mephju90](https://github.com/Mephju90)
 
 ---
 
-# 🏗️ Onepager Website – Draftsman Max Muster (Portfolio Version)
+# 🏗️ Onepager Website – Draftsman (Portfolio Version)
 
-This is a modern, responsive one-pager created for the technical draftsman Max Muster.  
+This is a modern, responsive one-pager created for the technical draftsman.  
 It serves **exclusively as a publicly accessible portfolio project** and is **not the final company website**.
 
 ---
@@ -88,7 +88,7 @@ It serves **exclusively as a publicly accessible portfolio project** and is **no
 
 This version is for portfolio presentation purposes only.  
 Functions such as the contact form are **disabled** and not operational.  
-The **final version** of the website will be launched soon via the hosting provider **IONOS**.
+The **final version** of the website will be launched soon.
 
 ---
 
