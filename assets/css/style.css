@@ -1,14 +1,17 @@
 /* ---------- FONTS ---------- */
 @font-face {
-  font-family: 'Architects Daughter';
+  font-family: "Architects Daughter";
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/architects-daughter/architects-daughter.woff2') format('woff2');
+  src: url("../fonts/architects-daughter/architects-daughter.woff2")
+    format("woff2");
   font-display: swap;
 }
 
 /* ---------- RESET & BASISLAYOUT ---------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 body {
@@ -30,7 +33,7 @@ a {
 
 /* ---------- TYPOGRAFIE: SKIZZENSTIL ---------- */
 .handwritten {
-  font-family: 'Architects Daughter', cursive, sans-serif;
+  font-family: "Architects Daughter", cursive, sans-serif;
   font-size: 2.2rem;
   color: #002244;
   margin-bottom: 1rem;
@@ -47,12 +50,39 @@ a {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'Architects Daughter', cursive, sans-serif;
+  font-family: "Architects Daughter", cursive, sans-serif;
 }
 .skizzen-button:hover {
   background: #005fa3;
   color: #fff;
   border-style: solid;
+}
+
+/* ---------- GLASS ---------- */
+
+.glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1); /* durchscheinend weiß */
+  border-radius: 16px;
+  backdrop-filter: blur(10px); /* erzeugt den Milchglas-Effekt */
+  -webkit-backdrop-filter: blur(10px); /* Safari-Unterstützung */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* ---------- NAVIGATION ---------- */
@@ -108,7 +138,6 @@ a {
   padding: 0;
 }
 
-
 #main-menu li a {
   color: #003366;
   font-weight: 500;
@@ -149,8 +178,6 @@ a {
   font-weight: 600;
 }
 
-
-
 @media (max-width: 768px) {
   #main-menu {
     position: absolute;
@@ -189,34 +216,71 @@ a {
   nav[hidden] {
     display: none;
   }
- 
+
   .ueber-mich-text {
     padding: 1rem 1.5rem;
   }
-
-
 }
 
 /* ---------- SEKTIONSLAYOUT ---------- */
-header, section {
+header,
+section {
   padding: 2rem 1rem;
   max-width: 1200px;
   margin: auto;
 }
 
+header {
+  max-width: 100vw;
+}
+
 /* ---------- HERO ---------- */
-.hero {
-  background: linear-gradient(to bottom right, #dfefff, #f3f8ff);
+/* .hero {
+  background: 
+    linear-gradient(to bottom right, #dfefff, #f3f8ff6f),
+    url(../img/background02.png);
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   text-align: center;
   padding: 6rem 1rem 4rem;
   animation: fadeInUp 1.2s ease-out both;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+} */
+
+.hero {
+  background: linear-gradient(to bottom right, #dfefff, #f3f8ffd3),
+    url("../img/background02.png");
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
+.glass-con {
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 2rem 3rem;
+  max-width: 1200px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  color: #003366;
+  text-align: center;
+}
+
+
+
 .hero h1 {
   font-size: clamp(2.5rem, 6vw, 4rem);
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
   font-weight: 700;
-  letter-spacing: -0.5px;
+  letter-spacing: 8.5px;
   color: #003366;
 }
 .hero p {
@@ -263,6 +327,16 @@ header, section {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
+
+/* .leistung {
+    background: 
+    linear-gradient(to bottom right, #010b3e91, #acb8ff),
+    url(../img/background02.png);
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
 .leistung .icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -293,14 +367,10 @@ header, section {
 }
 
 @media (max-width: 600px) {
-    .leistungen-cta {
+  .leistungen-cta {
     padding: 1.5rem 1rem;
   }
 }
-
-
-
-
 
 /* ---------- ÜBER MICH ---------- */
 .ueber-mich {
@@ -342,9 +412,6 @@ header, section {
   padding: 1rem;
 }
 
-
-
-
 .ueber-grid {
   display: grid;
   gap: 1.5rem;
@@ -362,7 +429,6 @@ header, section {
   }
 }
 @media (max-width: 600px) {
-
   .ueber-grid {
     grid-template-columns: 1fr;
   }
@@ -451,8 +517,6 @@ header, section {
   overflow: hidden;
 }
 
-
-
 .datenschutz-hinweis {
   margin-bottom: 2rem;
   border: none;
@@ -479,24 +543,20 @@ header, section {
   margin-top: 0.3rem;
   flex-shrink: 0;
   transform: scale(1.2);
-  width: 0.8rem;      /* feste Breite */
-  height: 0.8rem;     /* feste Höhe */
-  align-self: start;  /* verhindert Höhenstretch */
+  width: 0.8rem; /* feste Breite */
+  height: 0.8rem; /* feste Höhe */
+  align-self: start; /* verhindert Höhenstretch */
 }
-
 
 .ds-check a {
   color: #005fa3;
   text-decoration: underline;
 }
 
-
-
 .ds-label a {
   color: #005fa3;
   text-decoration: underline;
 }
-
 
 /* ---------- DSGVO COOKIE BANNER ---------- */
 .cookie-banner {
@@ -504,22 +564,34 @@ header, section {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #222;
+  background: #003366;
   color: #fff;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
-  z-index: 1000;
+  gap: 1rem;
+  flex-wrap: wrap;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+}
+.cookie-banner a {
+  color: #9cd6ff;
+  text-decoration: underline;
+}
+.cookie-banner a:hover {
+  color: #ffffff;
 }
 .cookie-banner button {
   background: #005fa3;
   border: none;
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 1rem;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 0.9rem;
 }
 
 /* ---------- FOOTER ---------- */
@@ -538,6 +610,7 @@ header, section {
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding-left: 2rem;
 }
 .footer-left,
 .footer-right {

@@ -7,25 +7,38 @@
       name="description"
       content="Moderne Website für einen Bauzeichner – barrierefrei, responsiv und DSGVO-konform"
     />
-    <title>Bauzeichner Max Muster</title>
+    <title>Bauzeichner Peter Kopf</title>
 
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="assets/js/script.js" defer></script>
   </head>
   <body>
     <!-- DSGVO Cookie Hinweis -->
-    <div class="cookie-banner" role="region" aria-label="Cookie Hinweis">
-      <span
-        >Diese Website verwendet Cookies. Mit der Nutzung stimmen Sie dem
-        zu.</span
-      >
-      <button aria-label="Einverstanden">OK</button>
+    <div
+      class="cookie-banner"
+      id="cookie-banner"
+      role="region"
+      aria-label="Hinweis zu technischen Cookies"
+    >
+      <span>
+        Diese Website verwendet ausschließlich technisch notwendige Cookies für
+        die sichere Bereitstellung der Seite.
+        <a href="/datenschutz.html" target="_blank" rel="noopener noreferrer"
+          >Mehr erfahren</a
+        >.
+      </span>
+      <button id="cookie-ok-btn" aria-label="Hinweis schließen">
+        Verstanden
+      </button>
     </div>
 
     <nav class="navbar">
       <div class="nav-inner">
         <div class="logo">
-          <img src="assets/img/logo03.png" alt="Logo" />
+          <img
+            src="assets/img/logo03.png"
+            alt="Zeichenbüro Peter Kopf – Logo"
+          />
         </div>
 
         <button
@@ -50,12 +63,25 @@
 
     <!-- HERO -->
     <header class="hero" role="banner" id="hero">
-      <h1>Bauzeichner Peter Kopf</h1>
-      <p>
-        Präzision in Planung & CAD – Ihr Partner für professionelle
-        Bauzeichnungen
-      </p>
+      <div class="glass-con">
+        <div class="shimmer-overlay"></div>
+        <h1>ZEICHENBÜRO <br> <span style="font-size:3rem"> Peter Kopf</span></h1>
+        <p>
+          Technisch. Präzise. Massgeschneidert. <br> Technische Zeichnungen auf höchster
+          CAD-Kompetenz
+        </p>
+      </div>
     </header>
+    <!-- <header class="hero" role="banner" id="hero">
+      <div class="glass-con">
+        <div class="shimmer-overlay"></div>
+        <h1>Zeichenbüro  Peter Kopf</h1>
+        <p>
+          Technisch- Präzise- Massgeschneidert. <br> Technische Zeichnungen auf höchster
+          CAD-Kompetenz
+        </p>
+      </div>
+    </header> -->
 
     <!-- LEISTUNGEN -->
     <section
@@ -66,36 +92,44 @@
       <h2 class="handwritten leistungen-heading">Leistungen</h2>
       <div class="leistungen-grid">
         <div class="leistung">
-          <div class="icon"><img src="assets/img/icons/cad.png" alt=""></div>
-          <h3>CAD-Zeichnungen</h3>
-          <p>Präzise technische Zeichnungen nach DIN.</p>
+          <div class="icon"><img src="assets/img/icons/cad.png" alt="" /></div>
+          <h3>Planung & Ausarbeitung</h3>
+          <p>Vom Konzept bis zum fertigen Plan – präzise, normgerecht und individuell.</p>
         </div>
         <div class="leistung">
-          <div class="icon"><img src="assets/img/icons/planung.png" alt=""></div>
-          <h3>Planung & Konstruktion</h3>
-          <p>Ausführungs- und Konstruktionspläne.</p>
+          <div class="icon">
+            <img src="assets/img/icons/planung.png" alt="" />
+          </div>
+          <h3>3D & Visualisierung</h3>
+          <p>Komplexe Inhalte anschaulich dargestellt.</p>
         </div>
         <div class="leistung">
-          <div class="icon"><img src="assets/img/icons/pläne.png" alt=""></div>
-          <h3>Revisionspläne</h3>
-          <p>Bestehende Pläne überarbeiten & anpassen.</p>
+          <div class="icon">
+            <img src="assets/img/icons/plaene.png" alt="" />
+          </div>
+          <h3>Technische Dokumentation</h3>
+          <p>Vor-Ort-Erfassung und präzise Auswertung.</p>
         </div>
         <div class="leistung">
-          <div class="icon"><img src="assets/img/icons/plot.png" alt=""></div>
-          <h3>Druck & Plot-Service</h3>
-          <p>Großformatdruck in professioneller Qualität.</p>
+          <div class="icon"><img src="assets/img/icons/plot.png" alt="" /></div>
+          <h3>Druck & Übergabe</h3>
+          <p>Ihre Pläne – perfekt aufbereitet.</p>
         </div>
         <div class="leistung">
-          <div class="icon d3"><img src="assets/img/icons/3d.png" alt=""></div>
-          <h3>3D-Visualisierung</h3>
-          <p>Darstellung komplexer Objekte & Modelle.</p>
+          <div class="icon d3">
+            <img src="assets/img/icons/3d.png" alt="" />
+          </div>
+          <h3>3D-Druck & Modellfertigung</h3>
+          <p>Erstellung von physischen Modellen aus konvertierten CAD-Modellen – z. B. STL oder OBJ. Ideal für Präsentationen, Prototypen und maßstabsgetreue Architekturmodelle.</p>
         </div>
-        <div class="leistung">
-          <div class="icon"><img src="assets/img/icons/bestand.png " alt=""></div>
+        <!-- <div class="leistung">
+          <div class="icon">
+            <img src="assets/img/icons/bestand.png " alt="" />
+          </div>
           <h3>Bestandsaufnahmen</h3>
           <p>Vor-Ort-Messungen und präzise Dokumentation.</p>
         </div>
-      </div>
+      </div> -->
       <div class="leistung-cta">
         <p>
           <strong>Ihr Projekt erfordert mehr als das?</strong><br />
@@ -144,7 +178,7 @@
           Ich unterstütze Unternehmen mit präzisen Zeichnungen – von CAD-Planung
           über Revisionspläne bis zur Druckausgabe. Dabei bringe ich meine
           langjährige Erfahrung aus verschiedenen Branchen wie
-          <strong>Sondermaschinenbau</strong>, <strong>Stahlbau</strong> oder
+          <strong>Sondermaschinenbau</strong>, <strong>Stahlbau</strong>, <strong>Fernwärme</strong> oder
           <strong>Haustechnik</strong> ein.
         </p>
         <p>

@@ -1,70 +1,52 @@
-// COOKIE BANNER
-// Cookie-Banner schließen
 document.addEventListener("DOMContentLoaded", () => {
-  const cookieBanner = document.querySelector(".cookie-banner");
-  const cookieButton = cookieBanner?.querySelector("button");
+  // COOKIE BANNER
+  const banner = document.getElementById("cookie-banner");
+  const btn = document.getElementById("cookie-ok-btn");
 
-  // Schließen bei Klick
-  cookieButton?.addEventListener("click", () => {
-    cookieBanner.style.display = "none";
-    // Optional: Speichern, dass der Nutzer zugestimmt hat
-    localStorage.setItem("cookiesAccepted", "true");
-  });
-
-  // Beim Laden prüfen, ob schon akzeptiert wurde
   if (localStorage.getItem("cookiesAccepted") === "true") {
-    cookieBanner.style.display = "none";
+    banner.style.display = "none";
+  } else {
+    btn?.addEventListener("click", () => {
+      banner.style.display = "none";
+      localStorage.setItem("cookiesAccepted", "true");
+    });
   }
 
-  // Scroll-Reveal Observer
-  const observer = new IntersectionObserver(entries => {
+  // SCROLL-REVEAL (Allgemein)
+  const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+        revealObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.3 });
 
- document.querySelectorAll('.leistung, .ueber-mich, .info-box, .kontaktformular')
-  .forEach(section => observer.observe(section));
+  document.querySelectorAll('.leistung, .ueber-mich, .info-box, .kontaktformular')
+    .forEach(section => revealObserver.observe(section));
 
-  // KONTAKT
-  const kontakt = document.querySelector('.kontaktformular');
-  if (kontakt) {
-    const kontaktObserver = new IntersectionObserver(entries => {
+  // FOOTER Reveal
+  const footer = document.querySelector('.site-footer');
+  if (footer) {
+    const footerObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          kontaktObserver.unobserve(entry.target);
+          footer.classList.add('visible');
+          footerObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.1 });
 
-    kontaktObserver.observe(kontakt);
+    footerObserver.observe(footer);
   }
 
-  // Hamburger Menü
+  // HAMBURGER MENU
   const toggleButton = document.querySelector(".menu-toggle");
   const nav = document.getElementById("main-menu");
 
   toggleButton?.addEventListener("click", () => {
     const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
-    toggleButton.setAttribute("aria-expanded", !isExpanded);
+    toggleButton.setAttribute("aria-expanded", (!isExpanded).toString());
     nav.hidden = isExpanded;
   });
 });
-
-const footer = document.querySelector('.site-footer');
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        footer.classList.add('visible');
-      }
-    });
-  },
-  { threshold: 0.1 }
-);
-
-observer.observe(footer);
