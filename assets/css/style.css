@@ -87,12 +87,12 @@ a {
 
 /* ---------- NAVIGATION ---------- */
 .navbar {
-  background: #fdfdfddb;
+  background: #fdfdfd;
   padding: 0.5rem 2rem;
   position: sticky;
   top: 0;
   z-index: 100;
-  max-width: 1200px;
+  max-width: 1100vw;
   margin: auto;
 }
 .nav-inner {
@@ -277,19 +277,35 @@ header {
 
 
 .hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  margin-bottom: 0rem;
-  font-weight: 700;
-  letter-spacing: 8.5px;
+  line-height: 1.05;
+  margin: 0;
   color: #003366;
 }
+
+.hero h1 .title-top { /* ZEICHENBÜRO */
+  display: block;
+  font-size: clamp(2.8rem, 6.6vw, 4.6rem);
+  font-weight: 800;              /* kräftig */
+  letter-spacing: 0.30em;        /* etwas Luft für Versalien */
+}
+
+.hero h1 .title-name { /* Peter Kopf */
+  display: block;
+  font-size: clamp(2.2rem, 5.2vw, 3.6rem);
+  font-weight: 600;              /* etwas leichter als oben */
+  letter-spacing: 0.2em;        /* minimal, wirkt ruhiger */
+  margin-top: 0.25em;            /* Abstand zwischen den Zeilen */
+}
+
 .hero p {
-  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
   max-width: 60ch;
-  margin: auto;
+  margin: 4rem auto 0;
   color: #333;
   opacity: 0.9;
 }
+
+
 
 /* ---------- ANIMATION ---------- */
 @keyframes fadeInUp {
@@ -303,74 +319,119 @@ header {
   }
 }
 
-/* ---------- LEISTUNGEN ---------- */
-
-.leistungen {
-  text-align: center;
-  padding: 4rem 1rem;
+/* ---------- LEISTUNGEN VARIANTE 1 MIT AKZENTEN ---------- */
+.leistungen.v3 { 
+  padding: 4rem 1rem; 
+  background: #f6f9fc; 
 }
+.section-head { 
+  text-align: center; 
+  max-width: 800px; 
+  margin: 0 auto 2rem; 
+}
+.section-head h2 { 
+  font-size: clamp(1.9rem, 3vw, 2.3rem); 
+  margin: 0; 
+  color: #0b3766; 
+}
+.section-head .subline { 
+  color: #5a6b82; 
+  margin-top: .4rem; 
+}
+
 .leistungen-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+@media (max-width: 900px) {
+  .leistungen-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .leistungen-grid { grid-template-columns: 1fr; }
+}
+
 .leistung {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  will-change: transform;
-}
-.leistung.visible:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #ffffff 0%, #f0f6ff 100%);
+  border-radius: 14px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  border: 1px solid #e8edf7;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* .leistung {
-    background: 
-    linear-gradient(to bottom right, #010b3e91, #acb8ff),
-    url(../img/background02.png);
-    background-size: cover;
+/* Muster als Overlay (SVG sehr hell) */
+.leistung::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/patterns/cad-lines.svg"); /* Pfad zu deinem Muster */
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-} */
-
-.leistung .icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  width: 50px;
-  margin: auto;
+  opacity: 0.05;
+  pointer-events: none;
+}
+.leistung:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border-color: #cfe2ff;
 }
 
-.leistung .d3 {
-  width: 80px;
+.icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #1b5fbf 0%, #003366 100%);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+}
+.icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.leistung h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0b3766;
+  margin-bottom: .5rem;
+}
+.leistung p {
+  font-size: .95rem;
+  color: #465a73;
+  line-height: 1.45;
 }
 
 .leistung-cta {
-  text-align: center;
-  margin-top: 3rem;
-  padding: 2rem 1rem;
-  background: #f1f7fd;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  background: linear-gradient(135deg, #f5f9ff 0%, #dbe7ff 100%);
+  border: 1px solid #cfe2ff;
 }
-.leistung-cta p {
-  font-size: 1.1rem;
-  color: #003366;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+.leistung-cta::before {
+  background-image: url("../img/patterns/contact-lines.svg"); /* anderes Muster */
+}
+.leistung-cta .cta-link {
+  display: inline-block;
+  margin-top: .75rem;
+  font-weight: 600;
+  color: #1b5fbf;
+  text-decoration: none;
+}
+.leistung-cta .cta-link:hover {
+  text-decoration: underline;
 }
 
-@media (max-width: 600px) {
-  .leistungen-cta {
-    padding: 1.5rem 1rem;
-  }
-}
+
+
+
+
 
 /* ---------- ÜBER MICH ---------- */
 .ueber-mich {
@@ -472,9 +533,7 @@ header {
   background: #f9fbfd;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 1s ease-out;
+transition: all 1s ease-out;
 }
 .kontaktformular.visible {
   opacity: 1;
@@ -499,7 +558,7 @@ header {
 .kontaktformular input:focus,
 .kontaktformular textarea:focus {
   border-color: #005fa3;
-  outline: none;
+  outline: 2px solid #005fa3; outline-offset: 2px;
   background: #fff;
 }
 .kontaktformular p {
@@ -664,4 +723,43 @@ header {
 .wow.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+/* A11y: sichtbarer Tastaturfokus */
+:focus-visible {
+  outline: 2px solid #005fa3;
+  outline-offset: 2px;
+}
+.navbar a:focus-visible,
+.menu-toggle:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* Reveal-on-scroll pattern: only offscreen elements are hidden */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 600ms ease-out, transform 600ms ease-out;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
