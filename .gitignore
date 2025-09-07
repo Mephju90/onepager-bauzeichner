@@ -1,0 +1,35 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Local env & secrets
+.env
+__privat/
+__lokal/
+
+# Dependencies / build
+vendor/
+node_modules/
+dist/
+build/
+.cache/
+.vite/
+.next/
+
+# IDEs & editors
+.idea/
+.vscode/
+
+# Logs & temp
+*.log
+*.lock
+*.bak
+*.tmp
+
+# Backups / archives
+*.zip
+*.tar
+*.tar.gz
+
+# Git metadata (never commit inside repo zips)
+.git/

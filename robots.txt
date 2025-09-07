@@ -1,0 +1,5 @@
+# robots.txt für zeichenbuero-pk.de
+User-agent: *
+Allow: /
+
+Sitemap: https://zeichenbuero-pk.de/sitemap.xml

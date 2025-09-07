@@ -1,0 +1,122 @@
+# ==================== ZEICHENBUERO-PK.DE (.htaccess) ====================
+
+# ---------- Verzeichnis & sensible Dateien ----------
+Options -Indexes
+
+# Dotfiles sperren (.env, .ht*, .gitignore, etc.)
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+# Sensible Einzeldateien sperren (auch im Unterordner)
+<FilesMatch "(^\.env$|composer\.(json|lock)$|package(-lock)?\.json$|config\.mail\.php$|mail_test\.php$|counter\.txt|\.bak$|\.old$|\.swp$)">
+  Require all denied
+</FilesMatch>
+
+# ---------- Ordner sperren, die nie öffentlich sein sollen ----------
+RewriteEngine On
+RewriteRule ^(vendor|private|tmp)/ - [F]
+
+# ---------- HTTPS erzwingen (vor HSTS) ----------
+# Falls du www nutzen willst, unten die zwei Zeilen ent-kommentieren und diese hier auskommentieren.
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://zeichenbuero-pk.de%{REQUEST_URI} [L,R=301]
+
+# Optional: www -> non-www (oder umgekehrt)
+# RewriteCond %{HTTP_HOST} ^www\.zeichenbuero-pk\.de$ [NC]
+# RewriteRule ^ https://zeichenbuero-pk.de%{REQUEST_URI} [L,R=301]
+
+# ---------- Security Headers ----------
+<IfModule mod_headers.c>
+  # HSTS (6 Monate) inkl. Subdomains
+  Header always setifempty Strict-Transport-Security "max-age=15552000; includeSubDomains"
+
+  # MIME Sniffing verhindern
+  Header always set X-Content-Type-Options "nosniff"
+
+  # (Legacy; optional) Browser XSS-Hinweis
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # Framing nur eigene Seite
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Referer minimieren
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Cross-Origin-Isolation/Resource-Policy
+  Header always set Cross-Origin-Resource-Policy "same-origin"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+
+  # Permissions-Policy: nur Nötiges erlauben
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), usb=(), payment=()"
+
+  # Content Security Policy (Starter, kompatibel mit Inline-CSS/JS)
+  # ⚠ Wenn du externe CDNs (z.B. Google Fonts) nutzt, Domains hier ergänzen.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+
+
+  # Zusätzliche Absicherung gegen Fremd-Domain-Policies
+  Header always set X-Permitted-Cross-Domain-Policies "none"
+</IfModule>
+
+# ---------- Caching ----------
+
+# ---------- HTTP-Kompression (Brotli / Deflate) ----------
+<IfModule mod_brotli.c>
+  BrotliCompressionQuality 5
+  AddOutputFilterByType BROTLI_COMPRESS \
+    text/html text/plain text/css \
+    application/javascript application/json application/xml \
+    image/svg+xml
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE \
+    text/html text/plain text/css \
+    application/javascript application/json application/xml \
+    image/svg+xml
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Für korrekte Varianten-Caches
+  Header append Vary Accept-Encoding
+</IfModule>
+
+
+# Lange Caches für Assets (Performance)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# Fallback-Header, falls mod_expires nicht aktiv ist
+<IfModule mod_headers.c>
+  <FilesMatch "\.(?:css|js|mjs|png|jpe?g|gif|svg|webp|ico|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# HTML nie hart cachen (verhindert „stale“ Seiten)
+<IfModule mod_headers.c>
+  <FilesMatch "\.(?:html?)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+  </FilesMatch>
+</IfModule>
+
+# ---------- Fehlerseiten ----------
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+
+# ---------- Source Maps & interne Dateien sperren ----------
+<FilesMatch "\.(map|md|yml|yaml)$">
+  Require all denied
+</FilesMatch>
+
+# ==================== /FINAL ====================

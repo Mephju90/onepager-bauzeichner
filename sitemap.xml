@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Startseite -->
+  <url>
+    <loc>https://zeichenbuero-pk.de/</loc>
+    <lastmod>2025-08-27</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Impressum -->
+  <url>
+    <loc>https://zeichenbuero-pk.de/impressum.html</loc>
+    <lastmod>2025-08-27</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Datenschutz -->
+  <url>
+    <loc>https://zeichenbuero-pk.de/datenschutz.html</loc>
+    <lastmod>2025-08-27</lastmod>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
