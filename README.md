@@ -9,7 +9,7 @@ Das GitHub-Repository dokumentiert die Struktur, Umsetzung und technischen Entsc
 
 ## 🚀 Live-Demo (GitHub Pages)
 
-🔗 [Zur Demo-Version](https://zeichenbuero-pk.de)
+🔗 [Zur Live-Version](https://zeichenbuero-pk.de)
 
 ✅ Finale Kundenwebsite<br>
 ✅ Produktiv im Einsatz<br>
