@@ -11,9 +11,9 @@ Das GitHub-Repository dokumentiert die Struktur, Umsetzung und technischen Entsc
 
 🔗 [Zur Demo-Version](https://zeichenbuero-pk.de)
 
-✅ Finale Kundenwebsite
-✅ Produktiv im Einsatz
-✅ Kontaktformular aktiv
+✅ Finale Kundenwebsite<br>
+✅ Produktiv im Einsatz<br>
+✅ Kontaktformular aktiv<br>
 ✅ DSGVO-konform umgesetzt
 
 ---
@@ -32,14 +32,13 @@ Ziel war die Umsetzung einer professionellen, klar strukturierten Website für e
 
 ## ✨ Features
 
-📱 Responsives Layout (Desktop, Tablet, Mobile)
-🍔 Animiertes Hamburger-Menü (Vanilla JS)
-🧭 Klare Seitenstruktur mit Onepager-Navigation
-✉️ Kontaktformular (produktive PHP-Verarbeitung)
-🍪 DSGVO-konformer Cookie-Hinweis (ohne Tracking)
-🎨 Skizzenhafter Designstil mit SVG-Elementen
-📄 Separate Seiten für Datenschutz & Impressum
-
+📱 Responsives Layout (Desktop, Tablet, Mobile)<br>
+🍔 Animiertes Hamburger-Menü (Vanilla JS)<br>
+🧭 Klare Seitenstruktur mit Onepager-Navigation<br>
+✉️ Kontaktformular (produktive PHP-Verarbeitung)<br>
+🍪 DSGVO-konformer Cookie-Hinweis (ohne Tracking)<br>
+🎨 Skizzenhafter Designstil mit SVG-Elementen<br>
+📄 Separate Seiten für Datenschutz & Impressum<br>
 ---
 
 ## ♿ Accessibility & Datenschutz
